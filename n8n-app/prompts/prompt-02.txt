@@ -1,8 +1,0 @@
-Professional automation workflow for February 2026 tasks.
----
-
-1. Schedule monthly meetings with team members to discuss progress and updates at 15:00 every Monday.
-2. Generate comprehensive monthly performance reports based on KPIs from the previous month by the end of each month.
-3. Distribute these reports via a shared drive.
-
-# [More detailed content as needed]
