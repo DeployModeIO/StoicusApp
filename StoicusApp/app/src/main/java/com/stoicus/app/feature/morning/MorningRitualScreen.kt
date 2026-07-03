@@ -5,6 +5,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
@@ -181,12 +182,12 @@ private fun ActiveSessionView(
         
         // Progress bar
         LinearProgressIndicator(
-            progress = { progress },
+            progress = progress,
             modifier = Modifier
                 .fillMaxWidth()
                 .height(8.dp),
             color = Bronze,
-            trackColor = StoneLight,
+            trackColor = StoneLight
         )
         
         Spacer(modifier = Modifier.height(24.dp))

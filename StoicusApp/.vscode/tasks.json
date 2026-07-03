@@ -1,0 +1,94 @@
+{
+    "version": "0.2.0",
+    "tasks": [
+        {
+            "label": "Run Android App (Debug)",
+            "type": "shell",
+            "command": "./gradlew",
+            "args": [
+                "installDebug"
+            ],
+            "cwd": "${workspaceFolder}/StoicusApp",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
+            "label": "Build APK Debug",
+            "type": "shell",
+            "command": "./gradlew",
+            "args": [
+                "assembleDebug"
+            ],
+            "cwd": "${workspaceFolder}/StoicusApp",
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Build APK Release",
+            "type": "shell",
+            "command": "./gradlew",
+            "args": [
+                "assembleRelease"
+            ],
+            "cwd": "${workspaceFolder}/StoicusApp",
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "List Connected Devices",
+            "type": "shell",
+            "command": "adb",
+            "args": [
+                "devices"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Start Emulator (Pixel 6)",
+            "type": "shell",
+            "command": "emulator",
+            "args": [
+                "-avd",
+                "Pixel_6_API_34"
+            ],
+            "group": "build",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "silent"
+            }
+        },
+        {
+            "label": "Clean Project",
+            "type": "shell",
+            "command": "./gradlew",
+            "args": [
+                "clean"
+            ],
+            "cwd": "${workspaceFolder}/StoicusApp",
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Sync Gradle",
+            "type": "shell",
+            "command": "./gradlew",
+            "args": [
+                "--refresh-dependencies"
+            ],
+            "cwd": "${workspaceFolder}/StoicusApp",
+            "group": "build",
+            "problemMatcher": []
+        }
+    ]
+}

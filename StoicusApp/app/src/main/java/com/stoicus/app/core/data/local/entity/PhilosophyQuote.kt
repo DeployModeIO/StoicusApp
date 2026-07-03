@@ -11,5 +11,7 @@ data class PhilosophyQuote(
     val text: String,
     val source: String = "",
     val pillar: String,
-    val favorited: Boolean = false
+    val favorited: Boolean = false,
+    val imageUrl: String? = null,
+    val era: String = ""
 )

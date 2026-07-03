@@ -313,7 +313,7 @@ private fun PillarBar(
         }
         Spacer(modifier = Modifier.height(4.dp))
         LinearProgressIndicator(
-            progress = { count.toFloat() / total },
+            progress = count.toFloat() / total,
             modifier = Modifier
                 .fillMaxWidth()
                 .height(8.dp)

@@ -59,4 +59,14 @@ object AppModule {
     fun provideDailyGoalDao(database: StoicusDatabase): DailyGoalDao {
         return database.dailyGoalDao()
     }
+
+    @Provides
+    fun provideStoicImageDao(database: StoicusDatabase): StoicImageDao {
+        return database.stoicImageDao()
+    }
+
+    @Provides
+    fun provideStoicMusicDao(database: StoicusDatabase): StoicMusicDao {
+        return database.stoicMusicDao()
+    }
 }

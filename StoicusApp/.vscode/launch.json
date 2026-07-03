@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Android App (Debug)",
+            "type": "android",
+            "request": "launch",
+            "project": "${workspaceFolder}/StoicusApp",
+            "app": "${workspaceFolder}/StoicusApp/app/build/outputs/apk/debug/app-debug.apk",
+            "activity": "com.stoicus.app.MainActivity",
+            "platform": "android"
+        }
+    ]
+}

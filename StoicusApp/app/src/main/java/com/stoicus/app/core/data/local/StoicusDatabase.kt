@@ -15,9 +15,11 @@ import com.stoicus.app.core.data.local.converters.Converters
         MoodEntry::class,
         PhilosophyQuote::class,
         StreakRecord::class,
-        DailyGoal::class
+        DailyGoal::class,
+        StoicImage::class,
+        StoicMusicTrack::class
     ],
-    version = 1,
+    version = 3,
     exportSchema = false
 )
 @TypeConverters(Converters::class)
@@ -29,4 +31,6 @@ abstract class StoicusDatabase : RoomDatabase() {
     abstract fun philosophyQuoteDao(): PhilosophyQuoteDao
     abstract fun streakRecordDao(): StreakRecordDao
     abstract fun dailyGoalDao(): DailyGoalDao
+    abstract fun stoicImageDao(): StoicImageDao
+    abstract fun stoicMusicDao(): StoicMusicDao
 }

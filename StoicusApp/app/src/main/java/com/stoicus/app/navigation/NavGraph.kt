@@ -1,6 +1,9 @@
 package com.stoicus.app.navigation
 
+import android.content.Context
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -13,6 +16,8 @@ import com.stoicus.app.feature.micro.MicroActionsScreen
 import com.stoicus.app.feature.evening.EveningRitualScreen
 import com.stoicus.app.feature.analytics.AnalyticsScreen
 import com.stoicus.app.feature.philosophy.PhilosophyScreen
+import com.stoicus.app.feature.gallery.GalleryScreen
+import com.stoicus.app.feature.music.MusicScreen
 
 @Composable
 fun StoicusNavGraph(
@@ -39,7 +44,9 @@ fun StoicusNavGraph(
                 onNavigateToMicroActions = { navController.navigate(Screen.MicroActions.route) },
                 onNavigateToEvening = { navController.navigate(Screen.EveningRitual.route) },
                 onNavigateToAnalytics = { navController.navigate(Screen.Analytics.route) },
-                onNavigateToPhilosophy = { navController.navigate(Screen.Philosophy.route) }
+                onNavigateToPhilosophy = { navController.navigate(Screen.Philosophy.route) },
+                onNavigateToGallery = { navController.navigate(Screen.Gallery.route) },
+                onNavigateToMusic = { navController.navigate(Screen.Music.route) }
             )
         }
 
@@ -69,6 +76,20 @@ fun StoicusNavGraph(
 
         composable(Screen.Philosophy.route) {
             PhilosophyScreen(
+                onNavigateBack = { navController.popBackStack() }
+            )
+        }
+
+        composable(Screen.Gallery.route) {
+            GalleryScreen(
+                onNavigateBack = { navController.popBackStack() }
+            )
+        }
+
+        composable(Screen.Music.route) {
+            val context = LocalContext.current
+            MusicScreen(
+                context = context,
                 onNavigateBack = { navController.popBackStack() }
             )
         }

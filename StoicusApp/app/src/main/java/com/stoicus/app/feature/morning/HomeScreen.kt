@@ -26,6 +26,8 @@ fun HomeScreen(
     onNavigateToEvening: () -> Unit,
     onNavigateToAnalytics: () -> Unit,
     onNavigateToPhilosophy: () -> Unit,
+    onNavigateToGallery: () -> Unit,
+    onNavigateToMusic: () -> Unit,
     viewModel: HomeViewModel = hiltViewModel()
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
@@ -132,6 +134,38 @@ fun HomeScreen(
                     title = "Filosofía",
                     icon = "📚",
                     onClick = onNavigateToPhilosophy,
+                    modifier = Modifier.weight(1f)
+                )
+            }
+        }
+
+        // Additional features
+        item {
+            Text(
+                text = "Recursos",
+                style = MaterialTheme.typography.headlineMedium,
+                fontWeight = FontWeight.Bold,
+                color = TextWhite
+            )
+        }
+
+        item {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 8.dp),
+                horizontalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
+                BottomActionCard(
+                    title = "Galería",
+                    icon = "🎨",
+                    onClick = onNavigateToGallery,
+                    modifier = Modifier.weight(1f)
+                )
+                BottomActionCard(
+                    title = "Música",
+                    icon = "🎵",
+                    onClick = onNavigateToMusic,
                     modifier = Modifier.weight(1f)
                 )
             }

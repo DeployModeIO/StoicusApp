@@ -1,0 +1,66 @@
+{
+  "name": "Generador de Proyectos",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "generar-proyecto",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1.1,
+      "position": [0, 0],
+      "id": "webhook-node",
+      "name": "Webhook"
+    },
+    {
+      "parameters": {
+        "jsCode": "const projectName = $('Webhook').first().json.body.projectName || 'mi-proyecto';\nconst timestamp = new Date().toISOString();\n\nreturn {\n  projectName,\n  createdAt: timestamp,\n  structure: {\n    src: ['index.js', 'utils.js'],\n    tests: ['test.js'],\n    files: ['package.json', 'README.md']\n  },\n  message: `Proyecto ${projectName} generado exitosamente`\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [200, 0],
+      "id": "code-node",
+      "name": "Generar Estructura"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [400, 0],
+      "id": "respond-node",
+      "name": "Responder Webhook"
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Generar Estructura",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generar Estructura": {
+      "main": [
+        [
+          {
+            "node": "Responder Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

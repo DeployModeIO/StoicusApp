@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Stoicus</string>
+    <string name="channel_evening">Ritual Nocturno</string>
+    <string name="channel_micro">Micro-acciones</string>
+    <string name="channel_morning">Ritual Matutino</string>
+    <string name="evening_reminder_text">Reflexiona sobre tu día. La sabiduría viene de la introspección.</string>
+    <string name="evening_reminder_title">Ritual Nocturno</string>
+    <string name="micro_action_text">Un pequeño paso hacia la virtud. ¿Estás listo?</string>
+    <string name="micro_action_title">Micro-acción Estoica</string>
+    <string name="morning_reminder_text">Es hora de fortalecer tu mente. ¿Listo para comenzar el día?</string>
+    <string name="morning_reminder_title">Ritual Matutino</string>
+    <style name="Theme.StoicusApp" parent="android:Theme.Material.NoActionBar">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>

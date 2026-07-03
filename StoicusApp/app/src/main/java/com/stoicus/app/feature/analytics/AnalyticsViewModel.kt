@@ -6,6 +6,7 @@ import com.stoicus.app.core.domain.model.AnalyticsData
 import com.stoicus.app.core.domain.usecase.GetAnalyticsDataUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 data class AnalyticsState(

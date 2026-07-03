@@ -7,6 +7,7 @@ import com.stoicus.app.core.domain.model.Pillar
 import com.stoicus.app.core.domain.usecase.GetUserProfileUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.launch
 import java.time.LocalDate
 import javax.inject.Inject
 

@@ -1,0 +1,15 @@
+R_DEF: Internal format may change without notice
+local
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+string channel_evening
+string channel_micro
+string channel_morning
+string evening_reminder_text
+string evening_reminder_title
+string micro_action_text
+string micro_action_title
+string morning_reminder_text
+string morning_reminder_title
+style Theme.StoicusApp

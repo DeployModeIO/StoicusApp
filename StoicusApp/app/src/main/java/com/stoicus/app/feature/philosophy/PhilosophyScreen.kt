@@ -128,14 +128,24 @@ private fun QuoteItem(
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Text(
-                    text = when (quote.pillar) {
-                        "MIND" -> "🧠"
-                        "BODY" -> "💪"
-                        else -> "🛡️"
-                    },
-                    fontSize = 20.sp
-                )
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    Text(
+                        text = when (quote.pillar) {
+                            "MIND" -> "🧠"
+                            "BODY" -> "💪"
+                            else -> "🛡️"
+                        },
+                        fontSize = 20.sp
+                    )
+                    Text(
+                        text = "— ${quote.era}",
+                        style = MaterialTheme.typography.labelMedium,
+                        color = TextMuted
+                    )
+                }
                 Text(
                     text = if (quote.favorited) "⭐" else "☆",
                     fontSize = 20.sp,
