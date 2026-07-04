@@ -17,6 +17,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.stoicus.app.core.ui.components.BackTopBar
 import com.stoicus.app.core.ui.components.MoodSlider
 import com.stoicus.app.core.ui.components.StepIndicator
 import com.stoicus.app.core.ui.theme.*
@@ -41,7 +42,8 @@ fun EveningRitualScreen(
                 onMoodChanged = viewModel::updateMoodScore,
                 onStressChanged = viewModel::updateStressLevel,
                 onEnergyChanged = viewModel::updateEnergyLevel,
-                onNext = viewModel::nextStep
+                onNext = viewModel::nextStep,
+                onExit = onNavigateBack
             )
             1 -> ExerciseSelectionView(
                 exercises = state.exercises,
@@ -78,14 +80,16 @@ private fun MoodCheckInView(
     onMoodChanged: (Float) -> Unit,
     onStressChanged: (Float) -> Unit,
     onEnergyChanged: (Float) -> Unit,
-    onNext: () -> Unit
+    onNext: () -> Unit,
+    onExit: () -> Unit
 ) {
     Column(
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp)
     ) {
-        Spacer(modifier = Modifier.height(32.dp))
+        BackTopBar(title = "Ritual Nocturno", onBack = onExit)
+        Spacer(modifier = Modifier.height(8.dp))
         
         Text(
             text = "🌙 Ritual Nocturno",

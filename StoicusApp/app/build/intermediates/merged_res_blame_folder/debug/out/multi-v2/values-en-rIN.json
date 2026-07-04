@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.stoicus.app-mergeDebugResources-63:/values-en-rIN/values-en-rIN.xml",
+            "outputFile": "com.stoicus.app-mergeDebugResources-64:/values-en-rIN/values-en-rIN.xml",
             "map": [
                 {
                     "source": "C:\\Users\\luisr\\.gradle\\caches\\transforms-3\\9f05bc252d697d76cdbcd216165ba45e\\transformed\\material3-1.1.2\\res\\values-en-rIN\\values-en-rIN.xml",

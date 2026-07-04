@@ -16,6 +16,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.stoicus.app.core.ui.components.BackTopBar
 import com.stoicus.app.core.ui.components.ProgressRing
 import com.stoicus.app.core.ui.components.StreakCounter
 import com.stoicus.app.core.ui.theme.*
@@ -35,7 +36,8 @@ fun AnalyticsScreen(
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         item {
-            Spacer(modifier = Modifier.height(32.dp))
+            BackTopBar(title = "Analytics", onBack = onNavigateBack)
+            Spacer(modifier = Modifier.height(8.dp))
             Text(
                 text = "📊 Analytics",
                 style = MaterialTheme.typography.displayMedium,

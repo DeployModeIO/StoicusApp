@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.stoicus.app-mergeDebugResources-63:/values-sw/values-sw.xml",
+            "outputFile": "com.stoicus.app-mergeDebugResources-64:/values-sw/values-sw.xml",
             "map": [
                 {
                     "source": "C:\\Users\\luisr\\.gradle\\caches\\transforms-3\\9f05bc252d697d76cdbcd216165ba45e\\transformed\\material3-1.1.2\\res\\values-sw\\values-sw.xml",

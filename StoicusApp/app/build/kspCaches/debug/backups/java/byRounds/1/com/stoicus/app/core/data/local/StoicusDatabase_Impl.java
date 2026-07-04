@@ -11,6 +11,8 @@ import androidx.room.util.DBUtil;
 import androidx.room.util.TableInfo;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 import androidx.sqlite.db.SupportSQLiteOpenHelper;
+import com.stoicus.app.core.data.local.dao.AdminAuditLogDao;
+import com.stoicus.app.core.data.local.dao.AdminAuditLogDao_Impl;
 import com.stoicus.app.core.data.local.dao.DailyGoalDao;
 import com.stoicus.app.core.data.local.dao.DailyGoalDao_Impl;
 import com.stoicus.app.core.data.local.dao.MicroActionDao;
@@ -34,6 +36,7 @@ import java.lang.Override;
 import java.lang.String;
 import java.lang.SuppressWarnings;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -62,10 +65,12 @@ public final class StoicusDatabase_Impl extends StoicusDatabase {
 
   private volatile StoicMusicDao _stoicMusicDao;
 
+  private volatile AdminAuditLogDao _adminAuditLogDao;
+
   @Override
   @NonNull
   protected SupportSQLiteOpenHelper createOpenHelper(@NonNull final DatabaseConfiguration config) {
-    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(config, new RoomOpenHelper.Delegate(3) {
+    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(config, new RoomOpenHelper.Delegate(4) {
       @Override
       public void createAllTables(@NonNull final SupportSQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS `user_profiles` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT NOT NULL, `selectedPillars` TEXT NOT NULL, `biggestChallenge` TEXT NOT NULL, `preferredTime` TEXT NOT NULL, `onboardingCompleted` INTEGER NOT NULL, `createdAt` INTEGER NOT NULL)");
@@ -77,8 +82,10 @@ public final class StoicusDatabase_Impl extends StoicusDatabase {
         db.execSQL("CREATE TABLE IF NOT EXISTS `daily_goals` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `date` TEXT NOT NULL, `pillar` TEXT NOT NULL, `goalDescription` TEXT NOT NULL, `completed` INTEGER NOT NULL, `completedAt` INTEGER)");
         db.execSQL("CREATE TABLE IF NOT EXISTS `stoic_images` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `title` TEXT NOT NULL, `description` TEXT NOT NULL, `imageUrl` TEXT NOT NULL, `category` TEXT NOT NULL, `philosopher` TEXT, `favorited` INTEGER NOT NULL)");
         db.execSQL("CREATE TABLE IF NOT EXISTS `stoic_music` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `title` TEXT NOT NULL, `artist` TEXT NOT NULL, `duration` INTEGER NOT NULL, `audioUrl` TEXT NOT NULL, `category` TEXT NOT NULL, `mood` TEXT NOT NULL, `favorited` INTEGER NOT NULL, `isPlaying` INTEGER NOT NULL)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `admin_audit_logs` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `action_type` TEXT NOT NULL, `description` TEXT NOT NULL, `performed_at` INTEGER NOT NULL, `admin_email` TEXT, `metadata_json` TEXT)");
+        db.execSQL("CREATE INDEX IF NOT EXISTS `index_admin_audit_logs_performed_at` ON `admin_audit_logs` (`performed_at`)");
         db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'a0db077df6946b2f7d194b7157614091')");
+        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '93be66dbd643dfd08458a1641e480cfe')");
       }
 
       @Override
@@ -92,6 +99,7 @@ public final class StoicusDatabase_Impl extends StoicusDatabase {
         db.execSQL("DROP TABLE IF EXISTS `daily_goals`");
         db.execSQL("DROP TABLE IF EXISTS `stoic_images`");
         db.execSQL("DROP TABLE IF EXISTS `stoic_music`");
+        db.execSQL("DROP TABLE IF EXISTS `admin_audit_logs`");
         final List<? extends RoomDatabase.Callback> _callbacks = mCallbacks;
         if (_callbacks != null) {
           for (RoomDatabase.Callback _callback : _callbacks) {
@@ -288,9 +296,26 @@ public final class StoicusDatabase_Impl extends StoicusDatabase {
                   + " Expected:\n" + _infoStoicMusic + "\n"
                   + " Found:\n" + _existingStoicMusic);
         }
+        final HashMap<String, TableInfo.Column> _columnsAdminAuditLogs = new HashMap<String, TableInfo.Column>(6);
+        _columnsAdminAuditLogs.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAdminAuditLogs.put("action_type", new TableInfo.Column("action_type", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAdminAuditLogs.put("description", new TableInfo.Column("description", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAdminAuditLogs.put("performed_at", new TableInfo.Column("performed_at", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAdminAuditLogs.put("admin_email", new TableInfo.Column("admin_email", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAdminAuditLogs.put("metadata_json", new TableInfo.Column("metadata_json", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        final HashSet<TableInfo.ForeignKey> _foreignKeysAdminAuditLogs = new HashSet<TableInfo.ForeignKey>(0);
+        final HashSet<TableInfo.Index> _indicesAdminAuditLogs = new HashSet<TableInfo.Index>(1);
+        _indicesAdminAuditLogs.add(new TableInfo.Index("index_admin_audit_logs_performed_at", false, Arrays.asList("performed_at"), Arrays.asList("ASC")));
+        final TableInfo _infoAdminAuditLogs = new TableInfo("admin_audit_logs", _columnsAdminAuditLogs, _foreignKeysAdminAuditLogs, _indicesAdminAuditLogs);
+        final TableInfo _existingAdminAuditLogs = TableInfo.read(db, "admin_audit_logs");
+        if (!_infoAdminAuditLogs.equals(_existingAdminAuditLogs)) {
+          return new RoomOpenHelper.ValidationResult(false, "admin_audit_logs(com.stoicus.app.core.data.local.entity.AdminAuditLog).\n"
+                  + " Expected:\n" + _infoAdminAuditLogs + "\n"
+                  + " Found:\n" + _existingAdminAuditLogs);
+        }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "a0db077df6946b2f7d194b7157614091", "966d0d6da18c0ff427f9c3bf6a43d798");
+    }, "93be66dbd643dfd08458a1641e480cfe", "fbe279cec37cd8a00b7b9822d447f7db");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(config.context).name(config.name).callback(_openCallback).build();
     final SupportSQLiteOpenHelper _helper = config.sqliteOpenHelperFactory.create(_sqliteConfig);
     return _helper;
@@ -301,7 +326,7 @@ public final class StoicusDatabase_Impl extends StoicusDatabase {
   protected InvalidationTracker createInvalidationTracker() {
     final HashMap<String, String> _shadowTablesMap = new HashMap<String, String>(0);
     final HashMap<String, Set<String>> _viewTables = new HashMap<String, Set<String>>(0);
-    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "user_profiles","ritual_sessions","micro_actions","mood_entries","philosophy_quotes","streak_records","daily_goals","stoic_images","stoic_music");
+    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "user_profiles","ritual_sessions","micro_actions","mood_entries","philosophy_quotes","streak_records","daily_goals","stoic_images","stoic_music","admin_audit_logs");
   }
 
   @Override
@@ -319,6 +344,7 @@ public final class StoicusDatabase_Impl extends StoicusDatabase {
       _db.execSQL("DELETE FROM `daily_goals`");
       _db.execSQL("DELETE FROM `stoic_images`");
       _db.execSQL("DELETE FROM `stoic_music`");
+      _db.execSQL("DELETE FROM `admin_audit_logs`");
       super.setTransactionSuccessful();
     } finally {
       super.endTransaction();
@@ -342,6 +368,7 @@ public final class StoicusDatabase_Impl extends StoicusDatabase {
     _typeConvertersMap.put(DailyGoalDao.class, DailyGoalDao_Impl.getRequiredConverters());
     _typeConvertersMap.put(StoicImageDao.class, StoicImageDao_Impl.getRequiredConverters());
     _typeConvertersMap.put(StoicMusicDao.class, StoicMusicDao_Impl.getRequiredConverters());
+    _typeConvertersMap.put(AdminAuditLogDao.class, AdminAuditLogDao_Impl.getRequiredConverters());
     return _typeConvertersMap;
   }
 
@@ -482,6 +509,20 @@ public final class StoicusDatabase_Impl extends StoicusDatabase {
           _stoicMusicDao = new StoicMusicDao_Impl(this);
         }
         return _stoicMusicDao;
+      }
+    }
+  }
+
+  @Override
+  public AdminAuditLogDao adminAuditLogDao() {
+    if (_adminAuditLogDao != null) {
+      return _adminAuditLogDao;
+    } else {
+      synchronized(this) {
+        if(_adminAuditLogDao == null) {
+          _adminAuditLogDao = new AdminAuditLogDao_Impl(this);
+        }
+        return _adminAuditLogDao;
       }
     }
   }

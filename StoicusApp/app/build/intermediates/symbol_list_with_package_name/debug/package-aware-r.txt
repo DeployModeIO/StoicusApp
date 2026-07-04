@@ -76,6 +76,8 @@ dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
 drawable abc_vector_test
+drawable bg_stoic_columns
+drawable bg_stoic_marble
 drawable ic_call_answer
 drawable ic_call_answer_low
 drawable ic_call_answer_video
@@ -199,6 +201,9 @@ layout notification_template_part_chronometer
 layout notification_template_part_time
 mipmap ic_launcher
 mipmap ic_launcher_round
+raw cookie_policy
+raw privacy_policy
+raw terms_of_service
 string androidx_startup
 string app_name
 string bottom_sheet_collapse_description

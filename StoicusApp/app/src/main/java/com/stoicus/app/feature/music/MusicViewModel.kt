@@ -1,9 +1,9 @@
 package com.stoicus.app.feature.music
 
 import android.content.Context
-import android.media.MediaPlayer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.stoicus.app.core.audio.StoicAudioEngine
 import com.stoicus.app.core.data.local.entity.StoicMusicTrack
 import com.stoicus.app.core.data.local.dao.StoicMusicDao
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -29,7 +29,7 @@ class MusicViewModel @Inject constructor(
     private val _state = MutableStateFlow(MusicState())
     val state: StateFlow<MusicState> = _state.asStateFlow()
 
-    private var mediaPlayer: MediaPlayer? = null
+    private val audioEngine = StoicAudioEngine()
 
     init {
         loadTracks()
@@ -90,14 +90,34 @@ class MusicViewModel @Inject constructor(
     fun playTrack(context: Context, track: StoicMusicTrack) {
         viewModelScope.launch {
             // Stop current track
-            stopTrack()
+            audioEngine.stop()
             
-            // Update playing state
+            // Update playing state in DB
             musicDao.stopAllTracks()
             musicDao.playTrack(track.id)
-            
-            // In production, replace with actual audio file path
-            // For now, simulate playback
+
+            // 🔊 Reproduce audio ambiental real (sintetizado proceduralmente)
+            // Capa naturaleza derivada del audioUrl/mood del track
+            val natureLayer = when {
+                track.audioUrl.contains("rain", true) -> "rain"
+                track.audioUrl.contains("ocean", true) || track.audioUrl.contains("sea", true) -> "ocean"
+                track.audioUrl.contains("forest", true) || track.audioUrl.contains("wood", true) -> "forest"
+                track.audioUrl.contains("fire", true) || track.audioUrl.contains("flame", true) -> "fire"
+                track.audioUrl.contains("wind", true) -> "wind"
+                track.audioUrl.contains("bird", true) -> "birds"
+                track.audioUrl.contains("stream", true) || track.audioUrl.contains("water", true) -> "stream"
+                track.mood == "calm" && track.category == "meditation" -> "forest"
+                track.category == "sleep" -> "rain"
+                track.category == "ambient" -> "ocean"
+                else -> null
+            }
+            audioEngine.play(
+                category = track.category,
+                mood = track.mood,
+                volume = _state.value.volume,
+                natureLayer = natureLayer
+            )
+
             _state.update { 
                 it.copy(
                     currentTrack = track,
@@ -105,25 +125,19 @@ class MusicViewModel @Inject constructor(
                     currentPosition = 0
                 ) 
             }
-            
-            // TODO: Initialize MediaPlayer with actual audio file
-            // mediaPlayer = MediaPlayer.create(context, R.raw.${track.audioUrl})
-            // mediaPlayer?.start()
         }
     }
 
     fun pauseTrack() {
         viewModelScope.launch {
-            mediaPlayer?.pause()
+            audioEngine.pause()
             _state.update { it.copy(isPlaying = false) }
         }
     }
 
     fun stopTrack() {
         viewModelScope.launch {
-            mediaPlayer?.stop()
-            mediaPlayer?.release()
-            mediaPlayer = null
+            audioEngine.stop()
             musicDao.stopAllTracks()
             _state.update { 
                 it.copy(
@@ -137,21 +151,18 @@ class MusicViewModel @Inject constructor(
 
     fun resumeTrack() {
         viewModelScope.launch {
-            mediaPlayer?.start()
+            audioEngine.resume()
             _state.update { it.copy(isPlaying = true) }
         }
     }
 
     fun seekTo(position: Int) {
-        viewModelScope.launch {
-            mediaPlayer?.seekTo(position)
-            _state.update { it.copy(currentPosition = position) }
-        }
+        _state.update { it.copy(currentPosition = position) }
     }
 
     fun setVolume(volume: Float) {
         _state.update { it.copy(volume = volume) }
-        mediaPlayer?.setVolume(volume, volume)
+        audioEngine.setVolume(volume)
     }
 
     fun toggleFavorite(track: StoicMusicTrack) {
@@ -162,6 +173,6 @@ class MusicViewModel @Inject constructor(
 
     override fun onCleared() {
         super.onCleared()
-        stopTrack()
+        audioEngine.stop()
     }
 }

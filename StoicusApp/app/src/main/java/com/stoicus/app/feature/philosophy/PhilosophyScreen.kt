@@ -16,6 +16,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.stoicus.app.core.ui.components.BackTopBar
 import com.stoicus.app.core.ui.theme.*
 
 @Composable
@@ -39,7 +40,8 @@ fun PhilosophyScreen(
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
         item {
-            Spacer(modifier = Modifier.height(32.dp))
+            BackTopBar(title = "Filosofía", onBack = onNavigateBack)
+            Spacer(modifier = Modifier.height(8.dp))
             Text(
                 text = "📚 Filosofía",
                 style = MaterialTheme.typography.displayMedium,

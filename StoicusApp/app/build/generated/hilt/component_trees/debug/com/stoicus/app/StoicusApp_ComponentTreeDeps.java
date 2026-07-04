@@ -20,12 +20,18 @@ import dagger.hilt.processor.internal.definecomponent.codegen._dagger_hilt_compo
 import hilt_aggregated_deps._com_stoicus_app_MainActivity_GeneratedInjector;
 import hilt_aggregated_deps._com_stoicus_app_StoicusApp_GeneratedInjector;
 import hilt_aggregated_deps._com_stoicus_app_di_AppModule;
+import hilt_aggregated_deps._com_stoicus_app_di_NetworkModule;
+import hilt_aggregated_deps._com_stoicus_app_di_SecurityModule;
+import hilt_aggregated_deps._com_stoicus_app_feature_admin_AdminViewModel_HiltModules_BindsModule;
+import hilt_aggregated_deps._com_stoicus_app_feature_admin_AdminViewModel_HiltModules_KeyModule;
 import hilt_aggregated_deps._com_stoicus_app_feature_analytics_AnalyticsViewModel_HiltModules_BindsModule;
 import hilt_aggregated_deps._com_stoicus_app_feature_analytics_AnalyticsViewModel_HiltModules_KeyModule;
 import hilt_aggregated_deps._com_stoicus_app_feature_evening_EveningRitualViewModel_HiltModules_BindsModule;
 import hilt_aggregated_deps._com_stoicus_app_feature_evening_EveningRitualViewModel_HiltModules_KeyModule;
 import hilt_aggregated_deps._com_stoicus_app_feature_gallery_GalleryViewModel_HiltModules_BindsModule;
 import hilt_aggregated_deps._com_stoicus_app_feature_gallery_GalleryViewModel_HiltModules_KeyModule;
+import hilt_aggregated_deps._com_stoicus_app_feature_license_LicenseViewModel_HiltModules_BindsModule;
+import hilt_aggregated_deps._com_stoicus_app_feature_license_LicenseViewModel_HiltModules_KeyModule;
 import hilt_aggregated_deps._com_stoicus_app_feature_micro_MicroActionsViewModel_HiltModules_BindsModule;
 import hilt_aggregated_deps._com_stoicus_app_feature_micro_MicroActionsViewModel_HiltModules_KeyModule;
 import hilt_aggregated_deps._com_stoicus_app_feature_morning_HomeViewModel_HiltModules_BindsModule;
@@ -81,12 +87,18 @@ import hilt_aggregated_deps._dagger_hilt_android_internal_modules_HiltWrapper_Ac
         _com_stoicus_app_MainActivity_GeneratedInjector.class,
         _com_stoicus_app_StoicusApp_GeneratedInjector.class,
         _com_stoicus_app_di_AppModule.class,
+        _com_stoicus_app_di_NetworkModule.class,
+        _com_stoicus_app_di_SecurityModule.class,
+        _com_stoicus_app_feature_admin_AdminViewModel_HiltModules_BindsModule.class,
+        _com_stoicus_app_feature_admin_AdminViewModel_HiltModules_KeyModule.class,
         _com_stoicus_app_feature_analytics_AnalyticsViewModel_HiltModules_BindsModule.class,
         _com_stoicus_app_feature_analytics_AnalyticsViewModel_HiltModules_KeyModule.class,
         _com_stoicus_app_feature_evening_EveningRitualViewModel_HiltModules_BindsModule.class,
         _com_stoicus_app_feature_evening_EveningRitualViewModel_HiltModules_KeyModule.class,
         _com_stoicus_app_feature_gallery_GalleryViewModel_HiltModules_BindsModule.class,
         _com_stoicus_app_feature_gallery_GalleryViewModel_HiltModules_KeyModule.class,
+        _com_stoicus_app_feature_license_LicenseViewModel_HiltModules_BindsModule.class,
+        _com_stoicus_app_feature_license_LicenseViewModel_HiltModules_KeyModule.class,
         _com_stoicus_app_feature_micro_MicroActionsViewModel_HiltModules_BindsModule.class,
         _com_stoicus_app_feature_micro_MicroActionsViewModel_HiltModules_KeyModule.class,
         _com_stoicus_app_feature_morning_HomeViewModel_HiltModules_BindsModule.class,

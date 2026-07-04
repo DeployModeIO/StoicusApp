@@ -73,6 +73,7 @@ MERGED from [androidx.annotation:annotation-experimental:1.3.1] C:\Users\luisr\.
 MERGED from [androidx.datastore:datastore:1.0.0] C:\Users\luisr\.gradle\caches\transforms-3\35bf6f523a9558848c4fa9f1a702c1b9\transformed\datastore-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.compose.runtime:runtime-saveable-android:1.6.0] C:\Users\luisr\.gradle\caches\transforms-3\c51e2368107b5d0934e377ecfb42f474\transformed\runtime-saveable-release\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.runtime:runtime-android:1.6.0] C:\Users\luisr\.gradle\caches\transforms-3\bd7b0fd8289979a3327b56d855ba1456\transformed\runtime-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.security:security-crypto:1.1.0-alpha06] C:\Users\luisr\.gradle\caches\transforms-3\74906cb0e9008085b81a15f7c960bf75\transformed\security-crypto-1.1.0-alpha06\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\luisr\.gradle\caches\transforms-3\ba2b65c22f399de0cf7c1838a7cda62c\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\luisr\.gradle\caches\transforms-3\309b4e863bd905939688bbd1d80df5a8\transformed\core-runtime-2.2.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\luisr\.gradle\caches\transforms-3\468acb346ea63872ade68f74f55f9fe7\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -346,6 +347,8 @@ MERGED from [androidx.compose.runtime:runtime-saveable-android:1.6.0] C:\Users\l
 MERGED from [androidx.compose.runtime:runtime-saveable-android:1.6.0] C:\Users\luisr\.gradle\caches\transforms-3\c51e2368107b5d0934e377ecfb42f474\transformed\runtime-saveable-release\AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.runtime:runtime-android:1.6.0] C:\Users\luisr\.gradle\caches\transforms-3\bd7b0fd8289979a3327b56d855ba1456\transformed\runtime-release\AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.runtime:runtime-android:1.6.0] C:\Users\luisr\.gradle\caches\transforms-3\bd7b0fd8289979a3327b56d855ba1456\transformed\runtime-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.security:security-crypto:1.1.0-alpha06] C:\Users\luisr\.gradle\caches\transforms-3\74906cb0e9008085b81a15f7c960bf75\transformed\security-crypto-1.1.0-alpha06\AndroidManifest.xml:20:5-44
+MERGED from [androidx.security:security-crypto:1.1.0-alpha06] C:\Users\luisr\.gradle\caches\transforms-3\74906cb0e9008085b81a15f7c960bf75\transformed\security-crypto-1.1.0-alpha06\AndroidManifest.xml:20:5-44
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\luisr\.gradle\caches\transforms-3\ba2b65c22f399de0cf7c1838a7cda62c\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\luisr\.gradle\caches\transforms-3\ba2b65c22f399de0cf7c1838a7cda62c\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\luisr\.gradle\caches\transforms-3\309b4e863bd905939688bbd1d80df5a8\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44

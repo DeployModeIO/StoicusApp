@@ -1,42 +1,66 @@
 [
     {
-        "merged": "com.stoicus.app-merged_res-65:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "com.stoicus.app-main-67:/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "C:\\Users\\luisr\\.gradle\\daemon\\8.5\\com.stoicus.app-merged_res-66:\\raw_privacy_policy.txt.flat",
+        "source": "C:\\Users\\luisr\\.gradle\\daemon\\8.5\\com.stoicus.app-main-68:\\raw\\privacy_policy.txt"
     },
     {
-        "merged": "com.stoicus.app-merged_res-65:/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "com.stoicus.app-main-67:/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "C:\\Users\\luisr\\.gradle\\daemon\\8.5\\com.stoicus.app-merged_res-66:\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\luisr\\.gradle\\daemon\\8.5\\com.stoicus.app-main-68:\\mipmap-xhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "com.stoicus.app-merged_res-65:/mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "com.stoicus.app-main-67:/mipmap-mdpi/ic_launcher_round.png"
+        "merged": "C:\\Users\\luisr\\.gradle\\daemon\\8.5\\com.stoicus.app-merged_res-66:\\drawable_bg_stoic_columns.xml.flat",
+        "source": "C:\\Users\\luisr\\.gradle\\daemon\\8.5\\com.stoicus.app-main-68:\\drawable\\bg_stoic_columns.xml"
     },
     {
-        "merged": "com.stoicus.app-merged_res-65:/mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "com.stoicus.app-main-67:/mipmap-xhdpi/ic_launcher_round.png"
+        "merged": "C:\\Users\\luisr\\.gradle\\daemon\\8.5\\com.stoicus.app-merged_res-66:\\drawable_bg_stoic_marble.xml.flat",
+        "source": "C:\\Users\\luisr\\.gradle\\daemon\\8.5\\com.stoicus.app-main-68:\\drawable\\bg_stoic_marble.xml"
     },
     {
-        "merged": "com.stoicus.app-merged_res-65:/mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "com.stoicus.app-main-67:/mipmap-xxhdpi/ic_launcher_round.png"
+        "merged": "C:\\Users\\luisr\\.gradle\\daemon\\8.5\\com.stoicus.app-merged_res-66:\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\luisr\\.gradle\\daemon\\8.5\\com.stoicus.app-main-68:\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "com.stoicus.app-merged_res-65:/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "com.stoicus.app-main-67:/mipmap-mdpi/ic_launcher.png"
+        "merged": "C:\\Users\\luisr\\.gradle\\daemon\\8.5\\com.stoicus.app-merged_res-66:\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\luisr\\.gradle\\daemon\\8.5\\com.stoicus.app-main-68:\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
-        "merged": "com.stoicus.app-merged_res-65:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "com.stoicus.app-main-67:/mipmap-hdpi/ic_launcher.png"
+        "merged": "com.stoicus.app-merged_res-66:/drawable_bg_stoic_columns.xml.flat",
+        "source": "com.stoicus.app-main-68:/drawable/bg_stoic_columns.xml"
     },
     {
-        "merged": "com.stoicus.app-merged_res-65:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "com.stoicus.app-main-67:/mipmap-xxxhdpi/ic_launcher_round.png"
+        "merged": "C:\\Users\\luisr\\.gradle\\daemon\\8.5\\com.stoicus.app-merged_res-66:\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\luisr\\.gradle\\daemon\\8.5\\com.stoicus.app-main-68:\\mipmap-hdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "com.stoicus.app-merged_res-65:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "com.stoicus.app-main-67:/mipmap-xhdpi/ic_launcher.png"
+        "merged": "C:\\Users\\luisr\\.gradle\\daemon\\8.5\\com.stoicus.app-merged_res-66:\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\luisr\\.gradle\\daemon\\8.5\\com.stoicus.app-main-68:\\mipmap-mdpi\\ic_launcher.png"
     },
     {
-        "merged": "com.stoicus.app-merged_res-65:/mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "com.stoicus.app-main-67:/mipmap-hdpi/ic_launcher_round.png"
+        "merged": "C:\\Users\\luisr\\.gradle\\daemon\\8.5\\com.stoicus.app-merged_res-66:\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\luisr\\.gradle\\daemon\\8.5\\com.stoicus.app-main-68:\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\luisr\\.gradle\\daemon\\8.5\\com.stoicus.app-merged_res-66:\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\luisr\\.gradle\\daemon\\8.5\\com.stoicus.app-main-68:\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\luisr\\.gradle\\daemon\\8.5\\com.stoicus.app-merged_res-66:\\raw_terms_of_service.txt.flat",
+        "source": "C:\\Users\\luisr\\.gradle\\daemon\\8.5\\com.stoicus.app-main-68:\\raw\\terms_of_service.txt"
+    },
+    {
+        "merged": "C:\\Users\\luisr\\.gradle\\daemon\\8.5\\com.stoicus.app-merged_res-66:\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\luisr\\.gradle\\daemon\\8.5\\com.stoicus.app-main-68:\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\luisr\\.gradle\\daemon\\8.5\\com.stoicus.app-merged_res-66:\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\luisr\\.gradle\\daemon\\8.5\\com.stoicus.app-main-68:\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\luisr\\.gradle\\daemon\\8.5\\com.stoicus.app-merged_res-66:\\raw_cookie_policy.txt.flat",
+        "source": "C:\\Users\\luisr\\.gradle\\daemon\\8.5\\com.stoicus.app-main-68:\\raw\\cookie_policy.txt"
+    },
+    {
+        "merged": "C:\\Users\\luisr\\.gradle\\daemon\\8.5\\com.stoicus.app-merged_res-66:\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\luisr\\.gradle\\daemon\\8.5\\com.stoicus.app-main-68:\\mipmap-xxxhdpi\\ic_launcher_round.png"
     }
 ]

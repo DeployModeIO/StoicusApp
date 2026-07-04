@@ -19,6 +19,7 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.compose.AsyncImage
+import com.stoicus.app.core.ui.components.BackTopBar
 import com.stoicus.app.core.ui.theme.*
 
 @Composable
@@ -44,7 +45,8 @@ fun GalleryScreen(
                 .fillMaxSize()
                 .padding(16.dp)
         ) {
-            Spacer(modifier = Modifier.height(32.dp))
+            BackTopBar(title = "Galería Estoica", onBack = onNavigateBack)
+            Spacer(modifier = Modifier.height(8.dp))
 
             Text(
                 text = "🎨 Galería Estoica",

@@ -1,7 +1,12 @@
 R_DEF: Internal format may change without notice
 local
+drawable bg_stoic_columns
+drawable bg_stoic_marble
 mipmap ic_launcher
 mipmap ic_launcher_round
+raw cookie_policy
+raw privacy_policy
+raw terms_of_service
 string app_name
 string channel_evening
 string channel_micro

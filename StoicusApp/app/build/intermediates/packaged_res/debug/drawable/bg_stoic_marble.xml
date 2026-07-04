@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Base oscura -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#FF1A1A2E"
+                android:centerColor="#FF16213E"
+                android:endColor="#FF0F0F1E"
+                android:angle="135" />
+        </shape>
+    </item>
+    <!-- Vetas de mármol -->
+    <item android:left="-50dp" android:top="100dp">
+        <vector xmlns:android="http://schemas.android.com/apk/res/android"
+            android:width="400dp" android:height="800dp"
+            android:viewportWidth="400" android:viewportHeight="800">
+            <path
+                android:strokeColor="#33E8E8E8"
+                android:strokeWidth="1.5"
+                android:pathData="M0,100 C80,150 120,80 200,120 S320,200 400,150" />
+            <path
+                android:strokeColor="#22BBBBBB"
+                android:strokeWidth="1"
+                android:pathData="M0,300 C100,350 180,280 260,330 S380,400 400,380" />
+            <path
+                android:strokeColor="#33E8E8E8"
+                android:strokeWidth="1.2"
+                android:pathData="M0,500 C90,540 170,480 250,520 S360,580 400,560" />
+            <path
+                android:strokeColor="#18AAAAAA"
+                android:strokeWidth="0.8"
+                android:pathData="M0,650 C70,680 150,630 230,670 S340,720 400,700" />
+        </vector>
+    </item>
+    <!-- Resplandor central -->
+    <item>
+        <shape android:shape="oval">
+            <gradient
+                android:type="radial"
+                android:startColor="#22D4AF37"
+                android:endColor="#00000000"
+                android:gradientRadius="400" />
+        </shape>
+    </item>
+</layer-list>

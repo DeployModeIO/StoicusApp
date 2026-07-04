@@ -18,7 +18,8 @@ data class HomeState(
     val todayMorningCompleted: Boolean = false,
     val todayEveningCompleted: Boolean = false,
     val todayMicroActions: Int = 0,
-    val greeting: String = ""
+    val greeting: String = "",
+    val dateLine: String = ""
 )
 
 @HiltViewModel
@@ -44,7 +45,8 @@ class HomeViewModel @Inject constructor(
                         state.copy(
                             userName = it.name,
                             selectedPillars = pillars,
-                            greeting = getGreeting()
+                            greeting = getGreeting(),
+                            dateLine = getDateLine()
                         )
                     }
                 }
@@ -59,5 +61,17 @@ class HomeViewModel @Inject constructor(
             hour < 18 -> "Buenas tardes"
             else -> "Buenas noches"
         }
+    }
+
+    private fun getDateLine(): String {
+        val date = LocalDate.now()
+        val day = date.dayOfMonth
+        val month = when (date.monthValue) {
+            1 -> "Enero"; 2 -> "Febrero"; 3 -> "Marzo"; 4 -> "Abril"
+            5 -> "Mayo"; 6 -> "Junio"; 7 -> "Julio"; 8 -> "Agosto"
+            9 -> "Septiembre"; 10 -> "Octubre"; 11 -> "Noviembre"; 12 -> "Diciembre"
+            else -> ""
+        }
+        return "$day de $month"
     }
 }
