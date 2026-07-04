@@ -1,0 +1,86 @@
+[TÉRMINOS Y CONDICIONES DE USO]
+
+Última actualización: [FECHA_DE_ACTUALIZACIÓN]
+
+Bienvenido a [NOMBRE_DE_LA_APP]. Al descargar, instalar o usar esta aplicación móvil ("la App"), aceptas quedar vinculado por los presentes Términos y Condiciones de Uso ("Términos"). Si no estás de acuerdo, no uses la App.
+
+1. MODELO DE LICENCIA Y USO
+
+1.1 Modelo Freemium: "5 usos gratuitos y bloqueo"
+La App ofrece un modelo de acceso limitado:
+   - Al instalar la App por primera vez, el usuario recibe hasta 5 (cinco) usos gratuitos del contenido principal.
+   - Una vez consumidos los 5 usos gratuitos, la App bloquea el acceso a las funciones principales ("Bloqueo").
+   - El contador de usos está protegido mediante almacenamiento cifrado y firma de integridad HMAC. La manipulación del contador constituye una violación de estos Términos y puede provocar el bloqueo permanente del dispositivo.
+
+1.2 Licencia de pago ($10 USD vía Gumroad)
+Para desbloquear el acceso completo e ilimitado a la App, se ofrece una licencia de pago único de $10 USD (diez dólares estadounidenses), procesada de forma externa a través de la plataforma Gumroad (https://gumroad.com).
+   - La compra se realiza fuera de la App, en el sitio web de Gumroad.
+   - La activación dentro de la App requiere ingresar la clave de licencia emitida por Gumroad.
+   - La App verifica la licencia contra la API oficial de Gumroad (https://api.gumroad.com/v2/licenses/verify).
+   - La licencia es válida de por vida para una (1) instalación, salvo que Gumroad indique lo contrario.
+   - Los reembolsos se rigen por la política de reembolsos de Gumroad.
+
+2. ACEPTACIÓN DE LOS TÉRMINOS
+
+Al usar la App, declaras que:
+   - Tienes la edad legal para celebrar contratos (al menos 13 años o la edad mínima en tu jurisdicción).
+   - Proporcionarás información veraz al adquirir tu licencia.
+   - No utilizarás la App para fines ilegales.
+
+3. PROPIEDAD INTELECTUAL
+
+La App, su contenido (textos, gráficos, logos, diseño, código) y las obras estoicas adaptadas son propiedad de [NOMBRE_DE_LA_EMPRESA] o sus licenciantes, y están protegidos por las leyes de propiedad intelectual. Los recursos de música, sonidos y fotografías open source se utilizan bajo sus respectivas licencias (ver sección "Recursos Open Source").
+
+4. PERMISOS DE USO
+
+Se concede al usuario una licencia limitada, no exclusiva, intransferible y revocable para:
+   - Descargar e instalar la App en un dispositivo que posea o controle.
+   - Usar la App para fines personales y no comerciales.
+Queda prohibido:
+   - Modificar, descompilar, realizar ingeniería inversa o distribuir la App.
+   - Bypassear, desactivar o manipular el contador de usos o los mecanismos de verificación de licencias.
+   - Compartir, vender o transferir licencias entre cuentas o dispositivos.
+
+5. RECURSOS OPEN SOURCE (MÚSICA, SONIDOS, FOTOS)
+
+La App integra recursos de terceros bajo licencias open source:
+   - Música y sonidos: APIs/servicios como Freesound (CC), Pixabay Audio, o equivalentes, con atribución según corresponda.
+   - Fotografías estoicas: APIs como Unsplash, Pexels, o equivalentes, sujetas a sus licencias respectivas.
+La atribución detallada de cada recurso se encuentra en la sección "Créditos" dentro de la App.
+
+6. RESPONSABILIDAD Y LIMITACIÓN DE DAÑOS
+
+6.1 La App es una herramienta de bienestar y filosofía personal. NO sustituye asesoramiento médico, psicológico o profesional.
+6.2 No nos hacemos responsables del mal uso de la App, ni de decisiones tomadas en base a su contenido.
+6.3 En la máxima medida permitida por la ley:
+   - La App se proporciona "tal cual" y "según disponibilidad", sin garantías de ningún tipo.
+   - No respondemos por daños directos, indirectos, incidentales o consecuentes derivados del uso o la imposibilidad de uso de la App.
+   - No garantizamos que la App sea libre de errores o que funcione ininterrumpidamente.
+
+7. ENLACES EXTERNOS Y TERCEROS
+
+La App puede contener enlaces a sitios de terceros (ej. Gumroad, fuentes de recursos). No somos responsables de las prácticas de privacidad ni del contenido de estos sitios externos.
+
+8. MODIFICACIONES
+
+Nos reservamos el derecho de modificar estos Términos en cualquier momento. Las modificaciones se publicarán en la App y/o en [URL_DE_SITIO_WEB]. El uso continuado de la App después de los cambios constituye la aceptación de los nuevos Términos.
+
+9. TERMINACIÓN
+
+Podemos suspender o bloquear el acceso a la App si:
+   - Se detecta manipulación del contador de usos o de la verificación de licencias.
+   - Se viola cualquiera de estos Términos.
+   - Se reembolsa o revoca una licencia de Gumroad.
+
+10. LEY APLICABLE Y JURISDICCIÓN
+
+Estos Términos se rigen por las leyes de [PAÍS/JURISDICCIÓN]. Cualquier disputa se someterá a los tribunales de [CIUDAD/REGIÓN], renunciando a cualquier otro fuero que pudiera corresponder.
+
+11. CONTACTO
+
+Para preguntas sobre estos Términos, contáctanos en:
+   - Email: [EMAIL_DE_SOPORTE]
+   - Sitio web: [URL_DE_SITIO_WEB]
+
+[NOMBRE_DE_LA_EMPRESA]
+[DIRECCIÓN_DE_LA_EMPRESA]

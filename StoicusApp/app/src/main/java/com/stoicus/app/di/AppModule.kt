@@ -22,7 +22,9 @@ object AppModule {
             context,
             StoicusDatabase::class.java,
             "stoicus_database"
-        ).build()
+        )
+            .fallbackToDestructiveMigration()
+            .build()
     }
 
     @Provides
@@ -68,5 +70,10 @@ object AppModule {
     @Provides
     fun provideStoicMusicDao(database: StoicusDatabase): StoicMusicDao {
         return database.stoicMusicDao()
+    }
+
+    @Provides
+    fun provideAdminAuditLogDao(database: StoicusDatabase): AdminAuditLogDao {
+        return database.adminAuditLogDao()
     }
 }

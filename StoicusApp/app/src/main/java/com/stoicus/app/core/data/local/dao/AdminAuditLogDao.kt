@@ -1,0 +1,33 @@
+package com.stoicus.app.core.data.local.dao
+
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
+import com.stoicus.app.core.data.local.entity.AdminAuditLog
+import kotlinx.coroutines.flow.Flow
+
+/**
+ * DAO para la entidad [AdminAuditLog].
+ */
+@Dao
+interface AdminAuditLogDao {
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insert(log: AdminAuditLog): Long
+
+    /**
+     * Retorna los logs ordenados por fecha descendente (más recientes primero).
+     */
+    @Query("SELECT * FROM admin_audit_logs ORDER BY performed_at DESC LIMIT :limit")
+    fun observeRecent(limit: Int = 100): Flow<List<AdminAuditLog>>
+
+    @Query("SELECT COUNT(*) FROM admin_audit_logs")
+    suspend fun count(): Int
+
+    @Query("DELETE FROM admin_audit_logs WHERE performed_at < :before")
+    suspend fun deleteOlderThan(before: Long): Int
+
+    @Query("DELETE FROM admin_audit_logs")
+    suspend fun clearAll()
+}

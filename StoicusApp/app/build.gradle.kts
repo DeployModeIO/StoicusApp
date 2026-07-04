@@ -20,11 +20,22 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
+        // BuildConfig flags para panel admin (por defecto true en debug)
+        buildConfigField("Boolean", "ENABLE_ADMIN_PANEL", "true")
+        buildConfigField("String", "GUMROAD_PRODUCT_ID", "\"YOUR_PRODUCT_ID_HERE\"")
+        buildConfigField("String", "GUMROAD_BASE_URL", "\"https://api.gumroad.com/\"")
     }
 
     buildTypes {
+        debug {
+            // Panel admin habilitado en debug
+            buildConfigField("Boolean", "ENABLE_ADMIN_PANEL", "true")
+        }
         release {
             isMinifyEnabled = false
+            // 🔒 Panel admin DESHABILITADO en release (producción)
+            buildConfigField("Boolean", "ENABLE_ADMIN_PANEL", "false")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -46,6 +57,7 @@ android {
 
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 
     composeOptions {
@@ -101,6 +113,16 @@ dependencies {
 
     // Coil for image loading
     implementation("io.coil-kt:coil-compose:2.5.0")
+
+    // 🆕 Retrofit + OkHttp (Gumroad API)
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+    implementation("com.google.code.gson:gson:2.10.1")
+
+    // 🆕 Security - EncryptedSharedPreferences
+    implementation("androidx.security:security-crypto:1.1.0-alpha06")
 
     // Testing
     testImplementation("junit:junit:4.13.2")

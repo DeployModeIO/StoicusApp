@@ -13,4 +13,11 @@ sealed class Screen(val route: String) {
     object RitualDetail : Screen("ritual_detail/{exerciseId}") {
         fun createRoute(exerciseId: String) = "ritual_detail/$exerciseId"
     }
+    // 🆕 Rutas para licencia, admin y legal
+    object LicenseActivation : Screen("license_activation")
+    object AdminGate : Screen("admin_gate")
+    object AdminPanel : Screen("admin_panel")
+    object PrivacyPolicy : Screen("privacy_policy")
+    object TermsOfService : Screen("terms_of_service")
+    object CookiePolicy : Screen("cookie_policy")
 }

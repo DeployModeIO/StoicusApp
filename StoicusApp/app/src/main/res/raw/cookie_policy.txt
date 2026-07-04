@@ -1,0 +1,64 @@
+POLÍTICA DE COOKIES Y ALMACENAMIENTO LOCAL
+[Última actualización: 4 de julio de 2026]
+
+Esta Política de Cookies explica cómo [NOMBRE_DE_LA_APP] ("la App", "nosotros", "nuestro") utiliza cookies técnicas y mecanismos de almacenamiento local del dispositivo para garantizar el funcionamiento básico, la seguridad y la personalización de la experiencia del usuario.
+
+Al utilizar la App, aceptas el uso de estas tecnologías según se describe a continuación.
+
+1. MARCO NORMATIVO
+Esta política se alinea con los requisitos de transparencia establecidos por:
+- Reglamento General de Protección de Datos (GDPR) de la Unión Europea, en particular el consentimiento para el uso de identificadores no esenciales.
+- California Consumer Privacy Act (CCPA) y la Ley de Privacidad de California (CPRA).
+- Directiva ePrivacy de la UE (sobre almacenamiento o acceso a información en equipos de usuario final).
+
+2. ¿UTILIZAMOS COOKIES PUBLICITARIAS O DE TERCEROS?
+No. [NOMBRE_DE_LA_APP] no utiliza cookies publicitarias, píxeles de seguimiento de terceros ni SDKs de analítica con identificación de usuario. La App está diseñada bajo un modelo de privacidad mínima.
+
+3. TECNOLOGÍAS DE ALMACENAMIENTO LOCAL QUE UTILIZAMOS
+La App emplea mecanismos de almacenamiento locales del sistema operativo Android, concretamente:
+- SharedPreferences / DataStore cifrados (mediante AndroidX Security Crypto): para persistir preferencias y estado sensible.
+- Base de datos SQLite (Room): para contenido descargado de la app (ej. frases, rituales) y registros de auditoría internos.
+
+Estos mecanismos residen físicamente en el dispositivo del usuario y no se envían a servidores externos salvo en los casos descritos en nuestra Política de Privacidad.
+
+4. FINALIDAD DEL ALMACENAMIENTO LOCAL
+Concretamente, almacenamos localmente la siguiente información técnica:
+
+a) Mantenimiento de sesión y preferencias
+- Recordar que ya completaste el onboarding.
+- Tu idioma seleccionado y configuración de tema (claro/oscuro).
+- Tu progreso en rituales (matutino, micro-acciones, vespertino) para no perder tu historial al cerrar la app.
+
+b) Conteo de usos gratuitos
+- La App incluye un contador de "5 usos gratuitos" que permite evaluar el producto antes de la compra.
+- El número de usos consumidos se guarda localmente de forma cifrada y protegida mediante un código HMAC anti-manipulación. Esto evita que el contador se reinicie desinstalando/reinstalando la app o modificando archivos.
+
+c) Estado de la licencia de Gumroad
+- Una vez verificas tu clave de licencia, [NOMBRE_DE_LA_APP] almacena localmente (cifrado) el hecho de que la app está licenciada, junto con el email asociado a la compra y la fecha de verificación. Esto permite que la app funcione sin conexión a internet.
+
+d) Datos técnicos del dispositivo
+- Recopilamos y almacenamos localmente identificadores técnicos limitados (como la marca y modelo del dispositivo y la versión de Android) con la única finalidad de mejorar la compatibilidad de la app. Estos datos no se asocian con tu nombre ni con tu dirección de correo a menos que hayas adquirido una licencia.
+
+5. ¿POR QUÉ ES NECESARIO EL ALMACENAMIENTO LOCAL?
+El almacenamiento local es estrictamente necesario para:
+- Proveer la funcionalidad principal de la app (rituales, galería, música).
+- Garantizar la integridad del modelo freemium de "5 usos gratuitos".
+- Permitir el uso offline de la app una vez licenciada.
+
+Por tanto, según el GDPR este tratamiento se basa en nuestro "interés legítimo" (Art. 6.1.f) para prevenir el fraude y ofrecer un servicio solicitado por ti. Bajo la CCPA, estos datos técnicos no constituyen "información personal" vendida o compartida.
+
+6. ACCESO, ELIMINACIÓN Y TUS DERECHOS
+- Puedes eliminar en cualquier momento todos los datos almacenados localmente desinstalando [NOMBRE_DE_LA_APP] o usando la opción "Borrar datos" en Configuración > Aplicaciones > [NOMBRE_DE_LA_APP] > Almacenamiento > Borrar datos.
+- Si has adquirido una licencia y quieres ejercer tus derechos de acceso, rectificación o supresión sobre el email asociado a tu compra, contáctanos en [EMAIL_DE_SOPORTE].
+
+7. TRANSFERENCIAS INTERNACIONALES
+Dado que el almacenamiento descrito es local al dispositivo, no se produce transferencia internacional de datos como consecuencia de estas tecnologías. Las eventuales verificaciones contra los servidores de Gumroad se rigen por la Política de Privacidad de [NOMBRE_DE_LA_APP] y la Política de Privacidad de Gumroad.
+
+8. CAMBIOS A ESTA POLÍTICA
+Podemos actualizar esta Política de Cookies cuando sea necesario para reflejar cambios técnicos o legales. Te notificaremos cualquier modificación sustancial desde dentro de la app o por correo electrónico si contamos con tu dirección.
+
+9. CONTACTO
+Si tienes preguntas sobre esta Política de Cookies, escríbenos a: [EMAIL_DE_SOPORTE]
+o por correo postal a: [DIRECCIÓN_FÍSICA_O_RAZÓN_SOCIAL]
+
+[Nombre legal de la entidad], [Año].

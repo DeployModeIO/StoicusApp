@@ -1,0 +1,88 @@
+[POLÍTICA DE PRIVACIDAD]
+
+Última actualización: [FECHA_DE_ACTUALIZACIÓN]
+
+Esta Política de Privacidad describe cómo [NOMBRE_DE_LA_APP] ("la App", "nosotros", "nos" o "nuestro") recopila, usa y protege la información personal de los usuarios ("tú" o "usuario") de conformidad con el Reglamento General de Protección de Datos (GDPR) de la Unión Europea y la California Consumer Privacy Act (CCPA).
+
+1. INFORMACIÓN QUE RECOPILAMOS
+
+1.1 Datos para validación de licencias (Gumroad)
+Para validar la compra de la licencia de pago, recopilamos y enviamos a Gumroad, Inc. la clave de licencia ingresada por el usuario y, de forma implícita, la dirección de correo electrónico asociada a la compra. Esta información se transmite exclusivamente a la API de Gumroad (https://api.gumroad.com/v2/licenses/verify) para verificar la autenticidad de la licencia.
+
+1.2 Datos técnicos del dispositivo
+Con el fin de implementar y proteger el modelo de "5 usos gratuitos", recopilamos y almacenamos de forma cifrada en el dispositivo los siguientes datos técnicos:
+   - Identificador ANDROID_ID combinado con un UUID aleatorio generado en la instalación.
+   - Contador de usos consumidos.
+   - Marca temporal (timestamp) del último uso.
+Estos datos NO salen del dispositivo; se almacenan localmente utilizando EncryptedSharedPreferences (AES-256) y una firma de integridad HMAC-SHA256 para evitar manipulación.
+
+1.3 Datos de uso y analítica
+La App puede registrar, de forma estrictamente local en el dispositivo, información sobre el progreso del usuario (rachas, rituales completados, estado de ánimo). Estos datos nunca se transmiten a servidores externos y pueden borrarse en cualquier momento desinstalando la App o desde Configuración > Borrar datos.
+
+2. BASE LEGAL PARA EL TRATAMIENTO (GDPR)
+
+Tratamos tus datos personales bajo las siguientes bases legales:
+   - Ejecución de un contrato (Art. 6(1)(b) del GDPR): para validar la licencia que adquiriste y habilitar las funciones de pago.
+   - Interés legítimo (Art. 6(1)(f) del GDPR): para proteger nuestros derechos de propiedad intelectual mediante el contador de usos anti-fraude.
+
+3. CÓMO USAMOS LA INFORMACIÓN
+
+Utilizamos la información recopilada para:
+   - Verificar y activar licencias de Gumroad.
+   - Garantizar el cumplimiento del límite de 5 usos gratuitos.
+   - Mantener la sesión y preferencias del usuario en el dispositivo.
+   - Mostrar tu progreso y estadísticas dentro de la App.
+
+NO utilizamos tu información para publicidad, ni la vendemos a terceros.
+
+4. COMPARTIR INFORMACIÓN CON TERCEROS
+
+Solo compartimos datos con:
+   - Gumroad, Inc.: para la verificación de licencias (https://help.gumroad.com).
+No compartimos información con redes sociales, anunciantes ni terceros no esenciales.
+
+5. TRANSFERENCIAS INTERNACIONALES DE DATOS
+
+La verificación de licencias implica el envío de tu clave de licencia a servidores de Gumroad ubicados potencialmente fuera del Espacio Económico Europeo (EEE). Aceptas esta transferencia, que se realiza bajo cláusulas contractuales tipo aprobadas por la Comisión Europea.
+
+6. TUS DERECHOS (GDPR / CCPA)
+
+Como usuario, tienes derecho a:
+   - Acceso: solicitar una copia de los datos personales que poseemos sobre ti.
+   - Rectificación: corregir datos inexactos.
+   - Supresión: solicitar el borrado de tus datos ("derecho al olvido").
+   - Oposición: oponerte al tratamiento basado en intereses legítimos.
+   - Restricción: limitar el procesamiento mientras se resuelve una reclamación.
+   - Portabilidad: recibir tus datos en formato estructurado.
+Para ejercer estos derechos, contáctanos en [EMAIL_DE_SOPORTE].
+
+Residentes de California (CCPA): No "vendemos" ni "compartimos" información personal personal según lo definido en la CCPA.
+
+7. RETENCIÓN DE DATOS
+
+Los datos técnicos del dispositivo se conservan mientras la App esté instalada y se eliminan al desinstalarse. Los datos enviados a Gumroad se rigen por su propia política de privacidad.
+
+8. SEGURIDAD
+
+Implementamos medidas técnicas de seguridad:
+   - Almacenamiento cifrado AES-256 vía Android Keystore.
+   - Firmas HMAC-SHA256 para detectar manipulación del contador de usos.
+   - Comunicaciones HTTPS/TLS con la API de Gumroad.
+Sin embargo, ningún método de transmisión o almacenamiento es 100% seguro.
+
+9. PRIVACIDAD DE MENORES
+
+La App no se dirige a menores de 13 años (o la edad aplicable en tu jurisdicción). No recopilamos conscientemente información de menores.
+
+10. CAMBIOS A ESTA POLÍTICA
+
+Podemos actualizar esta Política de Privacidad. Te notificaremos sobre cambios significativos mediante un aviso en la App o por correo electrónico (si disponemos de tu dirección). La fecha de "Última actualización" indica cuándo se revisó por última vez.
+
+11. CONTACTO
+
+Si tienes preguntas sobre esta Política de Privacidad, contáctanos en:
+   - Email: [EMAIL_DE_SOPORTE]
+   - Sitio web: [URL_DE_SITIO_WEB]
+
+[NOMBRE_DE_LA_EMPRESA]
+[DIRECCIÓN_DE_LA_EMPRESA]

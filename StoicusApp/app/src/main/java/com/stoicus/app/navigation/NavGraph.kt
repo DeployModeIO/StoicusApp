@@ -18,6 +18,10 @@ import com.stoicus.app.feature.analytics.AnalyticsScreen
 import com.stoicus.app.feature.philosophy.PhilosophyScreen
 import com.stoicus.app.feature.gallery.GalleryScreen
 import com.stoicus.app.feature.music.MusicScreen
+import com.stoicus.app.feature.legal.LegalTextsScreen
+import com.stoicus.app.feature.admin.AdminGateScreen
+import com.stoicus.app.feature.admin.AdminPanelScreen
+import com.stoicus.app.feature.license.LicenseActivationScreen
 
 @Composable
 fun StoicusNavGraph(
@@ -90,6 +94,55 @@ fun StoicusNavGraph(
             val context = LocalContext.current
             MusicScreen(
                 context = context,
+                onNavigateBack = { navController.popBackStack() }
+            )
+        }
+
+        // 🆕 Activación de licencia Gumroad
+        composable(Screen.LicenseActivation.route) {
+            LicenseActivationScreen(
+                onNavigateBack = { navController.popBackStack() },
+                onLicenseActivated = {
+                    navController.navigate(Screen.Home.route) { popUpTo(Screen.Home.route) { inclusive = true } }
+                }
+            )
+        }
+
+        // 🆕 Acceso al panel admin (gate con PIN)
+        composable(Screen.AdminGate.route) {
+            AdminGateScreen(
+                onAdminAuthorized = {
+                    navController.navigate(Screen.AdminPanel.route) {
+                        popUpTo(Screen.AdminGate.route) { inclusive = true }
+                    }
+                },
+                onNavigateBack = { navController.popBackStack() }
+            )
+        }
+
+        // 🆕 Panel admin (protegido)
+        composable(Screen.AdminPanel.route) {
+            AdminPanelScreen(
+                onNavigateBack = { navController.popBackStack() }
+            )
+        }
+
+        // 🆕 Pantallas legales
+        composable(Screen.PrivacyPolicy.route) {
+            LegalTextsScreen(
+                legalType = LegalTextsScreen.LegalType.PRIVACY_POLICY,
+                onNavigateBack = { navController.popBackStack() }
+            )
+        }
+        composable(Screen.TermsOfService.route) {
+            LegalTextsScreen(
+                legalType = LegalTextsScreen.LegalType.TERMS_OF_SERVICE,
+                onNavigateBack = { navController.popBackStack() }
+            )
+        }
+        composable(Screen.CookiePolicy.route) {
+            LegalTextsScreen(
+                legalType = LegalTextsScreen.LegalType.COOKIE_POLICY,
                 onNavigateBack = { navController.popBackStack() }
             )
         }
